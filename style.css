@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+}
+#main {
+    background-color: black;
+    overflow-x: hidden;
+}
+#loader {
+    width: 100%;
+    height: 47.5vw;
+    background-color: black;
+    position: absolute;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+}
+#loader h1{
+    font-family: "Freight Big Pro";
+    font-size: 7vw;
+    font-weight: 100;
+    line-height: 5vw;
+    letter-spacing: -0.2vw;
+    text-align: center;
+    color: white;
+    z-index: 10;
+
+}
+#yellow1 {
+    width: 100%;
+    height: 47.5vw;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index: 11;
+}
+#black {
+    width: 100%;
+    height: 47.5vw;
+    background-color: black;
+    position: absolute;
+    z-index: 10;
+}
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 10;
+}
+#page1 {
+    width: 100%;
+    height: 47.5vw;
+    background-color: #F5E41B;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+}
+#page1 h1{
+    font-family: "Freight Big Pro";
+    font-size: 7vw;
+    font-weight: 100;
+    line-height: 5vw;
+    letter-spacing: -0.2vw;
+    text-align: center;
+    color: white;
+}
+#nav {
+    width: 100%;
+    height: 5.9vw;
+    background-color: transparent;
+    position: absolute;
+    top: 0; 
+    display: flex;
+    align-items : center;
+    justify-content : space-between;
+    padding: 0 3.9vw;
+    z-index: 100;
+}
+#nav path {
+    fill: #000;
+}
+#page2 {
+    background-color: black;
+    width: 100%;
+    height: 47.5vw;
+    color: white;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+}
+#elem {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+#elem h1 {
+    font-size: 7vw;
+    font-weight: 100;
+    font-family: "Freight Big Pro";
+    text-transform: uppercase;
+    line-height: 5vw;
+    z-index: 10;
+}
+
+#elem:hover h1{
+    font-style: italic;
+}
+.moving {
+    white-space: nowrap;
+    overflow-x: auto;
+    background-color: #F5E41B;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-40%) scaleY(0);
+    opacity: 0;
+    transition: all ease 0.5s;
+    z-index: 9;
+}
+.moving #blur {
+    position: absolute;
+    width: 17%;
+    left: 30vw;
+    height: 100%;
+    background-color: transparent;
+}
+#elem:hover .moving{
+    opacity: 1;
+}
+.moving::-webkit-scrollbar {
+    display: none;
+}
+.moving-in {
+    display: inline-block;
+    animation-name: moving;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 5;
+}
+.moving-in h5 {
+    color: #000;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 1vw;
+    display: inline-block;
+    margin-right: 2vw;
+    padding: 0.6vw 0;
+}
+#elem:hover .moving {
+    transform: translate(0,-40%) scaleY(1);
+}
+@keyframes moving {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#page3 {
+    background-color: white;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2vw;
+    display: flex;
+    gap: 2vw;
+}
+.line {
+    width: 30.8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.image-container {
+    width: 100%;
+}
+.image-div {
+    width: 30.8vw;
+    overflow: hidden;
+    position: relative;
+}
+.image-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+}
+#overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.092);
+    position: absolute;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+    transition: all ease 0.5s;
+    z-index: 20;
+}
+#overlay h1{
+    color: white;
+    text-align: center;
+    font-family: "Freight Big Pro";
+    font-weight: 100;
+    font-size: 3vw;
+    text-transform: uppercase;
+    line-height: 3vw;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.image-div img :hover {
+    scale: (1.2);
+}
+.image-div:hover #overlay{
+    background-color: black;
+}
+.image-div:hover #overlay h1{
+    opacity: 1;
+}
+.image-div:hover img {
+    scale: 1.1;
+}
+#bottom {
+    width: 100%;
+    height: 17vw;
+    background-color: white;
+    position: relative;
+}
+#bottom-inner {
+    width: 100%;
+    height: 8vw;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+#back-to-top {
+    cursor: pointer;
+    text-align: center;
+}
+#back-to-top p {
+    font-size: 1.3vw;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+#back-to-top i {
+    font-size: 3vw;
+    font-weight: 100;
+}
+#bottom-inner {
+    text-transform: uppercase;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+}
+#social {
+    display: flex;
+    gap: 5vw;
+}
